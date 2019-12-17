@@ -21,8 +21,8 @@ test("disabled open/close if locked", () => {
 
 test("closed toggle button disabled if the gate is locked", () => {
   const { getByTestId } = render(<Controls closed={true} locked={true} />);
-
-  expect(getByTestId("toggle_closed").toBeDisabled());
+  //   console.log(getByTestId("toggle_closed"));
+  expect(getByTestId("toggle_closed")).toBeDisabled();
 });
 
 //the locked toggle button is disabled if the gate is open
@@ -30,5 +30,5 @@ test("closed toggle button disabled if the gate is locked", () => {
 test("locked toggle button disabled if the gate is open", () => {
   const { getByTestId } = render(<Controls closed={false} locked={false} />);
 
-  expect(getByTestId("toggle_locked").not.toBeDisabled());
+  expect(getByTestId("toggle_locked")).toBeDisabled();
 });
